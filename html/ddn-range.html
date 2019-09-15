@@ -10,7 +10,9 @@
         const ddn  = document.getElementById("predefinedRange");
         const val = ddn.options[ddn.selectedIndex].value;
         // alert(moment.duration(now.diff(then)).humanize());
-        alert(val);
+        //alert(val);
+        const timediv = document.getElementById("timediv");
+        timediv.innerHtml = value;
       }
     </script>
 </head>
@@ -18,6 +20,8 @@
 
 <select id="predefinedRange" placeholder="Choisir l'intervalle" onchange="selectInterval();">
 </select>
+    
+<div id="timediv">Nothing selected</div>
 
 <script>
 
