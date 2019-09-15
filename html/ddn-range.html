@@ -8,11 +8,12 @@
     <script>
       function selectInterval() {
         const ddn  = document.getElementById("predefinedRange");
-        const val = ddn.options[ddn.selectedIndex].value;
+        const values = ddn.options[ddn.selectedIndex].value.split(';');
         // alert(moment.duration(now.diff(then)).humanize());
         //alert(val);
         const timediv = document.getElementById("timediv");
-        timediv.innerHTML = val;
+        timediv.innerHTML = 'De : ' + moment().subtract(values[1] - 1, values[0]).startOf(values[0]).format() + <br/>';
+        timediv.innerHTML += 'À  : ' + moment().endOf(values[0]).format();
       }
     </script>
 </head>
@@ -21,7 +22,7 @@
 <select id="predefinedRange" placeholder="Choisir l'intervalle" onchange="selectInterval();">
 </select>
     
-<div id="timediv">Nothing selected</div>
+<div id="timediv" style='margin-top: 15px;'>Nothing selected</div>
 
 <script>
 
@@ -31,7 +32,7 @@
   
     const opt = document.createElement('option');
     opt.appendChild(document.createTextNode('Last ' + idx + ' hours'));
-    opt.value='0,' + idx;
+    opt.value = idx + ';hour');
     
     ddn.appendChild(opt);
     
@@ -41,7 +42,7 @@
   
     const opt = document.createElement('option');
     opt.appendChild(document.createTextNode('Last ' + idx + ' days'));
-    opt.value=idx + ',0';
+    opt.value = idx + ';day';
     
     ddn.appendChild(opt);
     
