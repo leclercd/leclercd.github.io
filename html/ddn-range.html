@@ -13,7 +13,7 @@
         const timediv = document.getElementById("timediv");
           
         timediv.innerHTML = 'De : ' + moment().subtract(values[1], values[0]).startOf(values[1]).format('DD.MM.YYYY HH:mm:ss') + '<br/>';
-        timediv.innerHTML += 'À    : ' + moment().endOf(values[1]).format('DD.MM.YYYY HH:mm:ss');
+        timediv.innerHTML += 'À&nbsp;&nbsp;: ' + moment().endOf(values[1]).format('DD.MM.YYYY HH:mm:ss');
           
       }
     </script>
