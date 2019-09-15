@@ -7,13 +7,14 @@
     <script src="https://momentjs.com/downloads/moment.js"></script>
     <script>
       function selectInterval() {
+          
         const ddn  = document.getElementById("predefinedRange");
         const values = ddn.options[ddn.selectedIndex].value.split(';');
-        // alert(moment.duration(now.diff(then)).humanize());
-        //alert(val);
         const timediv = document.getElementById("timediv");
+          
         timediv.innerHTML = 'De : ' + moment().subtract(values[1], values[0]).startOf(values[0]).format() + '<br/>';
         timediv.innerHTML += 'À  : ' + moment().endOf(values[0]).format();
+          
       }
     </script>
 </head>
@@ -32,7 +33,7 @@
   
     const opt = document.createElement('option');
     opt.appendChild(document.createTextNode('Last ' + idx + ' hours'));
-    opt.value = idx + ';hour');
+    opt.value = idx + ';hour';
     
     ddn.appendChild(opt);
     
