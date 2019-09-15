@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Select interval demo</title>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script>
+      function selectInterval() {
+        const ddn  = document.getElementById("predefinedRange");
+        const val = ddn.options[ddn.selectedIndex].value;
+        // alert(moment.duration(now.diff(then)).humanize());
+        alert(val);
+      }
+    </script>
+</head>
+<body>
+
+<select id="predefinedRange" placeholder="Choisir l'intervalle" onchange="selectInterval();">
+</select>
+
+<script>
+
+  const ddn = document.getElementById('predefinedRange');
+  
+  for (idx=1,idx<=23,idx++) {
+  
+    const opt = document.createElement('option');
+    opt.appendChild(document.createTextNode('Last ' + idx + ' hours'));
+    opt.value='0,' + idx;
+    
+    ddn.appendChild(opt);
+    
+  }
+  
+  for (idx=1,idx<=30,idx++) {
+  
+    const opt = document.createElement('option');
+    opt.appendChild(document.createTextNode('Last ' + idx + ' days'));
+    opt.value=idx + ',0';
+    
+    ddn.appendChild(opt);
+    
+  }
+  
+</script>
+
+</body>
+</html>
