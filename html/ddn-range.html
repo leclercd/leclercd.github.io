@@ -12,7 +12,7 @@
         // alert(moment.duration(now.diff(then)).humanize());
         //alert(val);
         const timediv = document.getElementById("timediv");
-        timediv.innerHTML = 'De : ' + moment().subtract(values[1] - 1, values[0]).startOf(values[0]).format() + <br/>';
+        timediv.innerHTML = 'De : ' + moment().subtract(values[1], values[0]).startOf(values[0]).format() + '<br/>';
         timediv.innerHTML += 'À  : ' + moment().endOf(values[0]).format();
       }
     </script>
